@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +20,7 @@
         <form class="main__form-plantilla <?= isset($errores) && !empty($errores) ? "main__form-plantilla-error" : "" ?>" action="/tattooshop_php/citas/alta" method="post">
             <div class="form-plantilla__container">
                 <div class="form-group">
-                    <label class="fw-lighter text-lowercase text-white" for="input_id">Id</label>
+                    <label class="fw-lighter text-white" for="input_id">Id</label>
                     <input type="text"
                         class="shadow form-control "
                         id="input_id" name="input_id"
@@ -28,7 +29,7 @@
                     <?php if (!empty($errores) && isset($errores["error_id"])): ?><small id="idError" class="form-text text-danger fw-bold"><?= $errores["error_id"] ?></small><?php endif; ?>
                 </div>
                 <div class="form-group">
-                    <label class="fw-lighter text-lowercase text-white" for="input_descripcion">Descripcion</label>
+                    <label class="fw-lighter text-white" for="input_descripcion">Descripcion</label>
                     <input type="text"
                         class="shadow form-control "
                         id="input_descripcion"
@@ -38,7 +39,7 @@
                     <?php if (!empty($errores) && isset($errores["error_descripcion"])): ?><small id="descripcionError" class="form-text text-danger fw-bold"><?= $errores["error_descripcion"] ?></small><?php endif; ?>
                 </div>
                 <div class="form-group">
-                    <label class="fw-lighter text-lowercase text-white" for="input_fecha_cita">Fecha y hora para la cita</label>
+                    <label class="fw-lighter text-white" for="input_fecha_cita">Fecha y hora para la cita</label>
                     <input type="text"
                         class="shadow form-control "
                         id="input_fecha_cita"
@@ -49,7 +50,7 @@
 
                 </div>
                 <div class="form-group">
-                    <label class="fw-lighter text-lowercase text-white" for="input_cliente">Nombre cliente</label>
+                    <label class="fw-lighter text-white" for="input_cliente">Nombre cliente</label>
                     <input type="text"
                         class="shadow form-control "
                         id="input_cliente"
@@ -58,13 +59,22 @@
                     <?php if (!empty($errores) && isset($errores["error_cliente"])): ?><small id="clienteError" class="form-text text-danger fw-bold"><?= $errores["error_cliente"] ?></small><?php endif; ?>
                 </div>
                 <div class="form-group">
+                    <?php
+                        require_once "./models/TatuadorModel.php";
+                        $tatuadorModel = new TatuadorModel();
+                        $tatuadores = $tatuadorModel->getAllTatuadores();
+
+                    ?>
                     <label class="fw-lighter text-lowercase text-white" for="input_tatuador">Nombre tatuador</label>
-                    <input type="text"
-                        class="shadow form-control "
-                        id="input_tatuador"
-                        name="input_tatuador"
-                        placeholder="Nombre tatuador">
-                    <?php if (!empty($errores) && isset($errores["error_tatuador"])): ?><small id="tatuadorError" class="form-text text-danger fw-bold"><?= $errores["error_tatuador"] ?></small><?php endif; ?>
+                    <select class="shadow form-control" id="input_tatuador" name="input_tatuador" required>
+                        <option value="">Selecciona un tatuador</option>
+                        <?php foreach ($tatuadores as $tatuador): ?>
+                            <option value="<?= $tatuador['nombre'] ?>"><?= htmlspecialchars($tatuador['nombre']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <?php if (!empty($errores) && isset($errores["error_tatuador"])): ?>
+                        <small id="tatuadorError" class="form-text text-danger fw-bold"><?= $errores["error_tatuador"] ?></small>
+                    <?php endif; ?>
                 </div>
                 <div class="container__btns-form">
                     <button type="submit" class="btn btn-primary btns-form__btn-enviar">Enviar</button>

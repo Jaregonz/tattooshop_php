@@ -1,6 +1,7 @@
 <?php
 
     require_once "./models/CitaModel.php";
+    require_once "./models/TatuadorModel.php";
 
     class CitaController {
 
@@ -9,6 +10,7 @@
         En este caso tenemos CitaModel -> Para poder acceder a la Base de Datos
         */
         private $citaModel;
+        private $tatuadorModel;
 
         /*
         CONSTRUCTOR DE CLASE
@@ -17,6 +19,7 @@
         */
         public function __construct() {
             $this->citaModel = new CitaModel();
+            $this->tatuadorModel = new TatuadorModel();
         }
 
         /**
@@ -77,7 +80,9 @@
 
                 if($operacionExitosa) {
                     // LLAMAR A UNA PÁGINA QUE MUESTRE UN MENSAJE DE ÉXITO
-                    require_once "./views/citasViews/AltaCitaCorrectaView.php";
+                    $tatuador = $this->tatuadorModel->getByNombre($input_tatuador);
+                    require_once "./views/citasViews/CitaConfirmacionView.php";
+                    
                 } else {
                     // LLAMAR A ALGÚN SITIO Y MOSTRAR UN MENSAJE DE ERROR
                     $errores["error_db"] = "Error al insertar la cita, intentelo de nuevo más tarde";

@@ -1,0 +1,79 @@
+
+body {
+    background-color: #2f2f2f !important; /* Fondo gris oscuro */
+    color: #ffffff; /* Texto blanco */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2, h3 {
+    color: #f1f1f1 !important;
+    text-align: center;
+}
+
+.form-plantilla__container{
+    max-width: 520px;
+}
+.container {
+    background-color: #3a3a3a; /* Gris medio */
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #ffffff; /* Marco blanco */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    max-width: 600px;
+    margin: auto;
+}
+
+p {
+    background-color: #4a4a4a; /* Gris más claro */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.container__btns-form{
+    margin-top: 10%;
+    text-align: center;
+}
+.btn {
+    background-color: #2e2e2e !important; /* Negro puro */
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+
+.btn:hover {
+    background-color: #555555 !important; /* Gris oscuro */
+}
+
+a {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #bbbbbb !important; /* Gris claro */
+}
+
+.card {
+    background-color: #3a3a3a !important; /* Gris medio para tarjetas */
+    border: 2px solid #ffffff !important;
+}
+
+.navbar {
+    background-color: #1e1e1e !important; /* Fondo gris oscuro para la barra de navegación */
+}
+
+.navbar a {
+    color: #ffffff !important;
+}
+
+.main__form-plantilla {
+    width: 520px;
+}

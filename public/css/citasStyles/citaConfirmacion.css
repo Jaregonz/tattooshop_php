@@ -1,0 +1,51 @@
+body {
+    background-color: #2e2e2e; /* Gris oscuro */
+    color: #bbbbbb; /* Blanco para el texto */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #f1f1f1; /* Blanco suave */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container {
+    background-color: #3a3a3a; /* Gris medio */
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #ffffff; /* Marco blanco */
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    max-width: 600px;
+    margin-left: 5% !important;
+}
+
+p {
+    background-color: #4a4a4a;
+    color:white; /* Gris más claro */
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    margin: 10px 0;
+}
+
+img {
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    max-width: 430px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Estilo para los enlaces (si se agregan más adelante) */
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #bbbbbb; /* Gris claro */
+}
